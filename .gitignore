@@ -1,0 +1,14 @@
+# Build output and local junk never belong in history
+bin/
+obj/
+publish/
+
+# Release archive (regenerable with dotnet publish)
+FsoTuner-win-x64.zip
+*.zip
+
+# Local edits and logs
+*.user
+*.log
+.freebuff/
+.agents/
