@@ -1,6 +1,6 @@
 # FSO Tuner
 
-A native Windows 11 app for controlling **Fullscreen Optimizations (FSO)**. Built with C# and WinUI 3 / Windows App SDK — not Electron, not a web wrapper.
+A native Windows 11 app for controlling **Fullscreen Optimizations (FSO)**. Built with C# and WinUI 3 / Windows App SDK, not Electron, not a web wrapper.
 
 ![FSO Tuner](screenshot.png)
 
@@ -8,19 +8,19 @@ A native Windows 11 app for controlling **Fullscreen Optimizations (FSO)**. Buil
 
 - Reads the current FSO values from `HKCU\System\GameConfigStore`.
 - Applies four global modes:
-  - **Windows default — FSO allowed** — removes the five FSO overrides. FSO is allowed, not guaranteed for every game.
-  - **FSO on — all games** — writes the FSO-friendly preset:
+  - **Windows default (FSO allowed)**, removes the five FSO overrides. FSO is allowed, not guaranteed for every game.
+  - **FSO on (all games)**, writes the FSO-friendly preset:
     `FSEBehavior=0`, `FSEBehaviorMode=1`, `HonorUser=1`, `DXGI=0`, `EFSE=0`.
     This is a preference; games can still choose exclusive or borderless mode.
-  - **FSO off — global tweak** — writes the strong preset:
+  - **FSO off (global tweak)**, writes the strong preset:
     `FSEBehavior=2`, `FSEBehaviorMode=2`, `HonorUser=1`, `DXGI=1`, `EFSE=0`.
     May affect overlays, HDR, color management, and GameDVR recording in exclusive fullscreen.
-  - **Custom — advanced values** — edits each of the five DWORDs directly, including the full EFSE bitmask range (`0–63`).
+  - **Custom (advanced values)**, edits each of the five DWORDs directly, including the full EFSE bitmask range (`0–63`).
 - Adds/removes per-game overrides through
   `HKCU\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers`
   using `DISABLEDXMAXIMIZEDWINDOWEDMODE` (the same flag as the Compatibility tab).
 - Shows the live registry state and warns when a global override makes per-game entries ineffective.
-- Writes only to **HKCU** — no administrator rights are needed.
+- Writes only to **HKCU**, so no administrator rights are needed.
 
 ## UI
 

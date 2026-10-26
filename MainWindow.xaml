@@ -65,7 +65,7 @@
                             Text="Fullscreen Optimizations"
                             Style="{StaticResource TitleTextBlockStyle}" />
                         <TextBlock
-                            Text="Choose how Windows presents fullscreen games — globally or per game."
+                            Text="Choose how Windows presents fullscreen games, globally or per game."
                             Style="{StaticResource BodyTextBlockStyle}"
                             Foreground="{ThemeResource TextFillColorSecondaryBrush}"
                             TextWrapping="Wrap" />
@@ -150,12 +150,12 @@
                             <RadioButton
                                 x:Name="DefaultRadio"
                                 GroupName="FsoMode"
-                                AutomationProperties.Name="Windows default — FSO allowed"
+                                AutomationProperties.Name="Windows default (FSO allowed)"
                                 HorizontalContentAlignment="Stretch"
                                 Checked="ModeRadio_Checked">
                                 <StackPanel Spacing="2">
                                     <TextBlock
-                                        Text="Windows default — FSO allowed"
+                                        Text="Windows default (FSO allowed)"
                                         FontWeight="SemiBold" />
                                     <TextBlock
                                         Text="Fast Alt-Tab, overlays, HDR/VRR when FSO is applied. Games may still choose exclusive fullscreen."
@@ -168,12 +168,12 @@
                             <RadioButton
                                 x:Name="OnRadio"
                                 GroupName="FsoMode"
-                                AutomationProperties.Name="FSO on — all games"
+                                AutomationProperties.Name="FSO on (all games)"
                                 HorizontalContentAlignment="Stretch"
                                 Checked="ModeRadio_Checked">
                                 <StackPanel Spacing="2">
                                     <TextBlock
-                                        Text="FSO on — all games"
+                                        Text="FSO on (all games)"
                                         FontWeight="SemiBold" />
                                     <TextBlock
                                         Text="Writes the FSO-friendly preset (FSEBehavior=0, Mode=1, Honor=1, DXGI=0, EFSE=0). Games can still choose exclusive or borderless mode."
@@ -186,12 +186,12 @@
                             <RadioButton
                                 x:Name="OffRadio"
                                 GroupName="FsoMode"
-                                AutomationProperties.Name="FSO off — global tweak"
+                                AutomationProperties.Name="FSO off (global tweak)"
                                 HorizontalContentAlignment="Stretch"
                                 Checked="ModeRadio_Checked">
                                 <StackPanel Spacing="2">
                                     <TextBlock
-                                        Text="FSO off — global tweak"
+                                        Text="FSO off (global tweak)"
                                         FontWeight="SemiBold" />
                                     <TextBlock
                                         Text="Legacy fullscreen path. May reduce latency; can break overlays, HDR, color management, or GameDVR recording. Applies the strong preset (FSEBehavior=2, Mode=2, Honor=1, DXGI=1, EFSE=0)."
@@ -204,12 +204,12 @@
                             <RadioButton
                                 x:Name="CustomRadio"
                                 GroupName="FsoMode"
-                                AutomationProperties.Name="Custom — advanced values"
+                                AutomationProperties.Name="Custom (advanced values)"
                                 HorizontalContentAlignment="Stretch"
                                 Checked="ModeRadio_Checked">
                                 <StackPanel Spacing="2">
                                     <TextBlock
-                                        Text="Custom — advanced values"
+                                        Text="Custom (advanced values)"
                                         FontWeight="SemiBold" />
                                     <TextBlock
                                         Text="Edit the five GameConfigStore values manually."
@@ -405,7 +405,7 @@
                                     Text="Per-game overrides"
                                     Style="{StaticResource SubtitleTextBlockStyle}" />
                                 <TextBlock
-                                    Text="Disables FSO only for the selected executable — the same flag as the Compatibility tab."
+                                    Text="Disables FSO only for the selected executable, the same flag as the Compatibility tab."
                                     Style="{StaticResource CaptionTextBlockStyle}"
                                     Foreground="{ThemeResource TextFillColorSecondaryBrush}"
                                     TextWrapping="Wrap" />
@@ -542,7 +542,7 @@
                             <StackPanel Spacing="3">
                                 <TextBlock Text="Competitive" FontWeight="SemiBold" />
                                 <TextBlock
-                                    Text="FSO off — globally or per game. Can reduce latency when a game uses exclusive fullscreen."
+                                    Text="FSO off, globally or per game. Can reduce latency when a game uses exclusive fullscreen."
                                     Style="{StaticResource CaptionTextBlockStyle}"
                                     Foreground="{ThemeResource TextFillColorSecondaryBrush}"
                                     TextWrapping="Wrap" />
@@ -577,7 +577,7 @@
                                 FontSize="12"
                                 Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
                             <TextBlock
-                                Text="Writes only to HKCU — no administrator rights needed."
+                                Text="Writes only to HKCU, so no administrator rights needed."
                                 Style="{StaticResource CaptionTextBlockStyle}"
                                 Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
                         </StackPanel>
