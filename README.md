@@ -20,6 +20,7 @@ A native Windows 11 app for controlling **Fullscreen Optimizations (FSO)**. Buil
   `HKCU\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers`
   using `DISABLEDXMAXIMIZEDWINDOWEDMODE` (the same flag as the Compatibility tab).
 - Shows the live registry state and warns when a global override makes per-game entries ineffective.
+- Reads the live registry values on every app start and whenever the **Refresh** button is clicked, with an "Updated HH:mm:ss" timestamp confirming when values were last read.
 - Writes only to **HKCU**, so no administrator rights are needed.
 
 ## UI

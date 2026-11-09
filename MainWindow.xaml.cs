@@ -36,6 +36,22 @@ public sealed partial class MainWindow : Window
 
         RootGrid.ActualThemeChanged += (_, _) => UpdateTitleBarColors();
         UpdateTitleBarColors();
+
+        // Read the live registry values once the window is actually shown,
+        // so the user always sees the current values Windows is using.
+        Activated += OnFirstActivated;
+
+        RefreshAll();
+    }
+
+    private void OnFirstActivated(object sender, WindowActivatedEventArgs args)
+    {
+        if (args.WindowActivationState == WindowActivationState.Deactivated)
+        {
+            return;
+        }
+
+        Activated -= OnFirstActivated;
         RefreshAll();
     }
 
@@ -71,6 +87,8 @@ public sealed partial class MainWindow : Window
             : Visibility.Collapsed;
 
         _loading = false;
+
+        RefreshedAtText.Text = $"Updated {DateTime.Now:HH:mm:ss}";
 
         LoadGames();
 

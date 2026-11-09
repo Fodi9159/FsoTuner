@@ -308,11 +308,16 @@ public static class FsoService
 
     private static int? ReadInt(RegistryKey? key, string name)
     {
-        if (key?.GetValue(name) is int value)
-        {
-            return value;
-        }
+        var raw = key?.GetValue(name);
 
-        return null;
+        return raw switch
+        {
+            // The values Windows reads are REG_DWORD.
+            int value => value,
+            // Some scripts and tools write these as REG_SZ; parse them too
+            // so the app never reports "(not set)" for a value that exists.
+            string text when int.TryParse(text.Trim(), out var parsed) => parsed,
+            _ => null
+        };
     }
 }
